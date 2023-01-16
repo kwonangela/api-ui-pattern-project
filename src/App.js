@@ -11,16 +11,16 @@ function App() {
   }, []);
 
   const getChar = async () => {
-    // const rmData = [];
+    // const dataArr = [];
     // let url= "https://rickandmortyapi.com/api/character?page="
     // for (let i=1; i<3; i++){
     //   fetch(`${url}${i}`)
     //   .then(res => res.json())
     //   .then(data => {
-    //     rmData.push(...data.results)
+    //     dataArr.push(...data.results)
     //   })
     // }
-    // setCharInfo(rmData);
+    // setCharInfo(dataArr);
   
     fetch(`https://rickandmortyapi.com/api/character?page=1/`)
     .then(res => res.json())
