@@ -1,38 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Oswald&family=Patrick+Hand+SC&family=Poiret+One&family=Roboto&display=swap');
+
+h1 {
+  font-size: 60px;
+  margin-bottom: -50px;
+}
+
+h2 {
+  font-size: 40px;
+
+}
+
+img {
+  margin-top: 5px;
+}
+
+#char-id-name {
+  font-size: 30px;
+}
+
 .App {
   text-align: center;
+  font-family: 'Patrick Hand SC', cursive;
+
+}
+button {
+  background: none;
+  border: none;
+  font-size: 50px;
+  margin: 0px 50px;
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.slider {
+  background: green;
+  margin: -30px 0px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
