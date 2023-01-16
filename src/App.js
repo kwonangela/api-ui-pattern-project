@@ -54,20 +54,18 @@ function App() {
     {charInfo.length && 
     <>
       <Header />
-      <h2>Characters</h2>
       <div className="slider">
-        <img className="char" src={charInfo[index].image} alt="asd"/>
+        <h3 id="char-id-name">#{charInfo[index].id}: {charInfo[index].name}</h3>
+        <img className="char" src={charInfo[index].image} alt="picture"/>
         <br></br>
         <button className="prev" onClick={getPrev}>&#10094; </button>
         <button className="next" onClick={getNext}>&#10095;</button>
-      
-      <h3 id="char-id-name">#{charInfo[index].id} - Name: {charInfo[index].name}</h3>
-      <h3>Status: {charInfo[index].status}</h3>
-      <h3>Species: {charInfo[index].species}</h3>
-      <h3>Gender: {charInfo[index].gender}</h3>
-      <h3>Origin: {charInfo[index].origin.name}</h3>
-      <h3>Location: {charInfo[index].location.name}</h3>
-      <h3>Appears in: {charInfo[index].episode.length} episodes</h3>
+        <h3><span class="info">Status:</span> {charInfo[index].status}</h3>
+        <h3><span class="info">Species:</span> {charInfo[index].species}</h3>
+        <h3><span class="info">Gender:</span> {charInfo[index].gender}</h3>
+        <h3><span class="info">Origin:</span> {charInfo[index].origin.name}</h3>
+        <h3><span class="info">Location:</span> {charInfo[index].location.name}</h3>
+        <h3><span class="info">Episodes Appeared:</span> {charInfo[index].episode.length}</h3>
       </div>
     </>
     }

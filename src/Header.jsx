@@ -1,8 +1,8 @@
 function Header(){
     return (
-        <>
-            <h1>Rick and Morty API</h1>
-        </>
+        <div class="header">
+            <h1>Rick and Morty: Characters</h1>
+        </div>
     )
 }
 
