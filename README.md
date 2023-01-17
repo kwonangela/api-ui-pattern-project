@@ -2,7 +2,7 @@
 
 This project displays a list of characters from the show "Rick and Morty", using a slider UI pattern that grabs data from the [Rick and Morty API](https://rickandmortyapi.com/). Users can go through each character by navigating via the left and right arrow buttons. Each character is displayed with their first name, an image, and some basic personal information (ex: species, gender, how many episodes they appear in). 
 
-NETLIFY LINK: 
+NETLIFY LINK: https://main--illustrious-alfajores-3cf063.netlify.app/
 
 # Screenshots
 This is what the app looks like:  
