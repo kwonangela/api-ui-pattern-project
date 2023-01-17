@@ -11,21 +11,9 @@ function App() {
   }, []);
 
   const getChar = async () => {
-    // const dataArr = [];
-    // let url= "https://rickandmortyapi.com/api/character?page="
-    // for (let i=1; i<3; i++){
-    //   fetch(`${url}${i}`)
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     dataArr.push(...data.results)
-    //   })
-    // }
-    // setCharInfo(dataArr);
-  
     fetch(`https://rickandmortyapi.com/api/character?page=1/`)
     .then(res => res.json())
     .then(data => {
-      console.log(data.results);
       setCharInfo(data.results)
     })
     }
@@ -57,7 +45,7 @@ function App() {
       <div className="slider">
         <h3 id="char-id-name">#{charInfo[index].id}: {charInfo[index].name}</h3>
         <div>
-          <img className="char" src={charInfo[index].image} alt="picture"/>
+          <img className="char" src={charInfo[index].image} alt="Character from Rick and Morty"/>
         </div>
         <br></br>
         <div className="slide-num">
