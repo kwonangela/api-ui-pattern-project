@@ -7,16 +7,16 @@ NETLIFY LINK: https://chic-hamster-a0d8b5.netlify.app/
 # Screenshots
 This is what the app looks like:  
 
-<img width="250" alt="Screenshot 2023-01-16 at 9 32 39 PM" src="https://user-images.githubusercontent.com/117434437/212797063-be38462e-0301-438d-b047-2f6f2e5f54af.png">
+<img width="250" alt="Screenshot 2023-01-17 at 4 31 59 PM" src="https://user-images.githubusercontent.com/117434437/213016903-39db8186-2cde-4256-adcd-8e9f8a8ff63e.png">
 
-<img width="250" alt="Screenshot 2023-01-16 at 9 32 49 PM" src="https://user-images.githubusercontent.com/117434437/212797130-c1d4da6c-e134-41dd-b60d-2963fac652b5.png">
+<img width="250" alt="Screenshot 2023-01-17 at 4 32 15 PM" src="https://user-images.githubusercontent.com/117434437/213016939-289b0942-0b12-4b76-a980-355288d19e0d.png">
+
 
 # Technologies Used
 - JavaScript (React)
 - CSS
  
 # Next Steps
-- Include more characters
 - Make the app look "prettier"
 - Add more features to make the app more interactive
 
