@@ -1,69 +1,109 @@
-import './App.css';
-import {useEffect, useState } from "react";
-import Header from "./Header.jsx"
+import "./App.css";
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import Header from "./Header.jsx";
 
 function App() {
-  const [charInfo, setCharInfo] = useState([]);
+  const [characters, setCharacters] = useState([]);
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    getChar()
+    getChar();
   }, []);
 
   const getChar = async () => {
-    fetch(`https://rickandmortyapi.com/api/character?page=1/`)
-    .then(res => res.json())
-    .then(data => {
-      setCharInfo(data.results)
-    })
+    const dataArr = [];
+    let url = "https://rickandmortyapi.com/api/character?page=";
+
+    for (let i = 1; i < 43; i++) {
+      dataArr.push(axios.get(`${url}${i}`));
     }
 
+    const data = await Promise.all(dataArr);
+
+    let filteredResults = []
+    
+    data.forEach((data) => {
+      filteredResults.push(...data.data.results)
+    })
+
+    setCharacters(filteredResults)
+  };
+
   function getNext() {
-    setIndex(thisCharIndex => {
-      if ((thisCharIndex) < 19) {
+    setIndex((thisCharIndex) => {
+      if (thisCharIndex < 825) {
         return thisCharIndex + 1;
       } else {
         return 0;
       }
-    })
+    });
   }
+
   function getPrev() {
-    setIndex(thisCharIndex => {
-      if ((thisCharIndex) > 0) {
+    setIndex((thisCharIndex) => {
+      if (thisCharIndex > 0) {
         return thisCharIndex - 1;
       } else {
-        return 19;
+        return 825;
       }
-    })
+    });
   }
-  
+
   return (
     <div className="App">
-    {charInfo.length && 
-    <>
-      <Header />
-      <div className="slider">
-        <h3 id="char-id-name">#{charInfo[index].id}: {charInfo[index].name}</h3>
-        <div>
-          <img className="char" src={charInfo[index].image} alt="Character from Rick and Morty"/>
-        </div>
-        <br></br>
-        <div className="slide-num">
-          <button className="prev" onClick={getPrev}>&#10094; </button>
-          <div className="slide-index">{charInfo[index].id} out of {charInfo.length}</div>
-          <button className="next" onClick={getNext}>&#10095;</button>
-        </div>
-        <h3><span className="info">Status:</span> {charInfo[index].status}</h3>
-        <h3><span className="info">Species:</span> {charInfo[index].species}</h3>
-        <h3><span className="info">Gender:</span> {charInfo[index].gender}</h3>
-        <h3><span className="info">Origin:</span> {charInfo[index].origin.name}</h3>
-        <h3><span className="info">Location:</span> {charInfo[index].location.name}</h3>
-        <h3><span className="info">Episodes Appeared:</span> {charInfo[index].episode.length}</h3>
-      </div>
-    </>
-    }
+      {characters.length && (
+        <>
+          <Header />
+          <div className="slider">
+            <h3 id="char-id-name">
+              #{characters[index].id}: {characters[index].name}
+            </h3>
+            <div>
+              <img
+                className="char"
+                src={characters[index].image}
+                alt="Character from Rick and Morty"
+              />
+            </div>
+            <br></br>
+            <div className="slide-num">
+              <button className="prev" onClick={getPrev}>
+                &#10094;{" "}
+              </button>
+              <div className="slide-index">
+                {characters[index].id} out of {characters.length}
+              </div>
+              <button className="next" onClick={getNext}>
+                &#10095;
+              </button>
+            </div>
+            <h3>
+              <span className="info">Status:</span> {characters[index].status}
+            </h3>
+            <h3>
+              <span className="info">Species:</span> {characters[index].species}
+            </h3>
+            <h3>
+              <span className="info">Gender:</span> {characters[index].gender}
+            </h3>
+            <h3>
+              <span className="info">Origin:</span>{" "}
+              {characters[index].origin.name}
+            </h3>
+            <h3>
+              <span className="info">Location:</span>{" "}
+              {characters[index].location.name}
+            </h3>
+            <h3>
+              <span className="info">Episodes Appeared:</span>{" "}
+              {characters[index].episode.length}
+            </h3>
+          </div>
+        </>
+      )}
     </div>
-  )
+  );
 }
 
 export default App;
