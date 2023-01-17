@@ -13,15 +13,44 @@ h1 {
   text-decoration: underline;
 }
 
-img {
-  margin-top: 10px;
+.slider {
+  margin: -30px 0px;
 }
 
 #char-id-name {
   color: #bfde42;
   font-size: 32px;
-  margin-top: 0px;
   text-transform: uppercase;
+}
+
+img {
+  width: 50%;
+  max-width: 300px;
+}
+
+.char {
+  padding: 3px;
+  background-color: white;
+}
+
+.slide-num {
+  display: flex;
+  justify-content: center;
+  margin: -10px auto 5px auto;
+  align-items: center;
+}
+
+.slide-index{
+  font-size: 22px;
+  margin: 0px 20px;
+}
+
+button {
+  background: none;
+  border-color: #41b4c9;
+  color: #41b4c9;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 h3 {
@@ -33,23 +62,3 @@ h3 {
   color: #bfde42;
   font-size:28px;
 }
-
-button {
-  background: none;
-  border-color: #41b4c9;
-  color: #41b4c9;
-  font-size: 30px;
-  margin: 10px 50px;
-  font-weight: bold;
-}
-
-.slider {
-  margin: -30px 0px;
-}
-
-.char {
-  padding: 3px;
-  background-color: white;
-}
-
-

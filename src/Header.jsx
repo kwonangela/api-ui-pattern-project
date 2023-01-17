@@ -1,6 +1,6 @@
 function Header(){
     return (
-        <div class="header">
+        <div className="header">
             <h1>Rick and Morty: Characters</h1>
         </div>
     )
